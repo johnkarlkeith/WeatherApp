@@ -31,7 +31,7 @@ export function useFavorite() {
         addedAt: Date.now(),
       };
 
-      const exists = favorites.some((fav) => fav.id === newFavorite.id);
+      const exists = favorites.some((fav:any) => fav.id === newFavorite.id);
       if (exists) return favorites; 
 
       const newFavorites = [...favorites, newFavorite].slice(0, 10);
@@ -49,7 +49,7 @@ export function useFavorite() {
 
   const removeFavorite = useMutation({
     mutationFn: async (cityId:string) => {
-      const newFavorites = favorites.filter((city) => city.id !== cityId);
+      const newFavorites = favorites.filter((city:any) => city.id !== cityId);
       setFavorites(newFavorites);
       return newFavorites;
     },
@@ -65,6 +65,6 @@ export function useFavorite() {
     addFavorite,
     removeFavorite,
     isFavorite: (lat:number, lon:number)=>
-        favorites.some((city)=> city.lat === lat && city.lon === lon),
+        favorites.some((city:any)=> city.lat === lat && city.lon === lon),
   };
 }

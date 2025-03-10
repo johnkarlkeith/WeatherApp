@@ -9,7 +9,7 @@ interface FavoriteButtonProps {
 }     
 
 const FavoriteButton = ({ data } : FavoriteButtonProps) => {
-    const { addFavorite, favorites, isFavorite, removeFavorite}= useFavorite();
+    const { addFavorite, isFavorite, removeFavorite}= useFavorite();
     const isCurrentlyFavorite = isFavorite(data.coord.lat, data.coord.lon);
 
     const handleToggleFavorite = () =>{
@@ -29,7 +29,7 @@ const FavoriteButton = ({ data } : FavoriteButtonProps) => {
     
     return (
         <Button 
-            variant={isCurrentlyFavorite ? "defualt" : "outline"} 
+            variant={isCurrentlyFavorite ? "default" : "outline"} 
             size ={"icon"}
             onClick={handleToggleFavorite}
             className={isCurrentlyFavorite ? "bg-yellow-500 hover:bg-yellow-600" : ""}

@@ -32,7 +32,7 @@ export function useSearchHistory() {
       };
 
       const filteredHistory = history.filter(
-        (item) => !(item.lat === search.lat && item.lon === search.lon)
+        (item:any) => !(item.lat === search.lat && item.lon === search.lon)
       );
 
       const newHistory = [newSearch, ...filteredHistory].slice(0, 10);
