@@ -3,8 +3,6 @@ import { Coordinates, ForecastData, GeocodingResponse, WeatherData } from "./typ
 
 const API_KEY = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
 
-console.log("API_KEY:", API_KEY); // Add this line to verify the API key
-
 class WeatherAPI {
     private createUrl(
         endpoint: string, 
